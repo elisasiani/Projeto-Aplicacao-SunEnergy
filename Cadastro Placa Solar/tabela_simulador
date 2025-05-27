@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS calculadora_solar;
+
+USE calculadora_solar;
+
+CREATE TABLE IF NOT EXISTS simulacoes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cep VARCHAR(9) NOT NULL,
+    uf VARCHAR(2) NOT NULL,
+    valor_conta DECIMAL(10, 2) NOT NULL,
+    concessionaria VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    data_simulacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

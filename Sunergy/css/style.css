@@ -1,0 +1,598 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  line-height: 1.6;
+}
+
+
+.header-content {
+  text-align: center;
+  max-width: 700px;
+  padding: 20px;
+  border-radius: 10px;
+  color: white; /* opcional, se o fundo for escuro */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.nav-bar h1 {
+  font-size: 3.5em;
+  color: #FFD700;
+}
+
+.nav-bar p {
+  font-size: 1.5em;
+  color: #add8e6;
+}
+
+.nav-bar2 {
+  background-color: #003366;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.nav-bar2 ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-bar2 ul li {
+  margin: 0 15px;
+}
+
+.nav-bar2 ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-bar2 ul li a:hover {
+  color: #FFD700;
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2.5em;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+section p {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: #555;
+}
+
+.benefits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  margin: 15px;
+  padding: 25px;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  color: #FFD700;
+  margin-bottom: 10px;
+}
+
+.team {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.team-member {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 220px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.team-member img {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.team-member h4 {
+  margin-bottom: 5px;
+  color: #003366;
+}
+
+
+.btn {
+  background-color: #FFD700;
+  color: #003366;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #e6c200;
+}
+
+footer {
+  background-color: #003366;
+  color: #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+footer a {
+  color: #FFD700;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .team-member {
+    width: 180px;
+    margin-bottom: 20px;
+  }
+}
+
+
+/* Reset básico e Cores */
+:root {
+    --cor-amarelo: #FFD700; /* Amarelo Sol */
+    --cor-amarelo-escuro: #FFC400;
+    --cor-azul: #005A9C;    /* Azul Céu/Tecnologia */
+    --cor-azul-escuro: #004070;
+    --cor-cinza-claro: #f4f4f4;
+    --cor-cinza-medio: #cccccc;
+    --cor-cinza-escuro: #333333;
+    --cor-preto: #1a1a1a;
+    --texto-cor: var(--cor-preto);
+    --texto-cor-clara: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    color: var(--texto-cor);
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* Header */
+header {
+    background-color: #003366;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+header .logo-img {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 1.8em;
+    margin: 0;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: var(--cor-amarelo);
+    border-bottom: 2px solid var(--cor-amarelo);
+}
+
+
+
+
+
+
+
+
+/* Main Content Sections */
+main section {
+    padding: 60px 0;
+}
+
+main section:nth-child(even) {
+    background-color: var(--cor-cinza-claro);
+}
+
+h2, h3, h4 {
+    margin-bottom: 20px;
+    color: var(--cor-azul-escuro);
+}
+
+h2 { font-size: 2.5em; text-align: center; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.4em; color: var(--cor-azul); }
+
+p {
+    margin-bottom: 15px;
+    color: var(--cor-cinza-escuro);
+}
+
+/* Hero Section (Home) */
+#hero {
+    background: linear-gradient(rgba(0, 90, 156, 0.7), rgba(0, 64, 112, 0.7)), url('../images/painel-solar.jpg') no-repeat center center/cover; /* Substitua por uma imagem de fundo */
+    color: var(--texto-cor-clara);
+    text-align: center;
+    padding: 100px 0;
+}
+
+#hero h2 {
+    color: var(--texto-cor-clara);
+    font-size: 3em;
+}
+
+#hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: var(--cor-cinza-claro);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--cor-amarelo);
+    color: var(--cor-preto);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: var(--cor-amarelo-escuro);
+}
+
+/* About Preview (Home) */
+#about-preview .responsive-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.link-styled {
+    color: var(--cor-azul);
+    text-decoration: none;
+    font-weight: bold;
+}
+.link-styled:hover {
+    text-decoration: underline;
+    color: var(--cor-azul-escuro);
+}
+
+/* Benefits Section (Home) */
+#benefits .benefit-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap; /* Para telas menores */
+}
+
+#benefits .card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    text-align: center;
+    flex-basis: calc(33.333% - 20px); /* 3 colunas com gap */
+    min-width: 280px; /* Para não ficar muito pequeno */
+}
+
+#benefits .card h4 {
+    color: var(--cor-amarelo-escuro);
+}
+
+/* Page Title (Para Sobre, Simulação, Empresa) */
+.page-title {
+    background-color: #003366;
+    color: var(--texto-cor-clara);
+    padding: 40px 0;
+    text-align: center;
+}
+.page-title h2 {
+    color: var(--texto-cor-clara);
+    margin-bottom: 10px;
+}
+.page-title p {
+    color: var(--cor-cinza-claro);
+    font-size: 1.1em;
+}
+
+/* Sobre Nós Page */
+#company-story ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+#company-story ul li {
+    margin-bottom: 8px;
+    color: var(--cor-cinza-escuro);
+}
+
+/* Simulação Page */
+#simulation-form-section form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--cor-azul-escuro);
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--cor-cinza-medio);
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--cor-amarelo);
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.5);
+}
+
+/* Simulation Results */
+#simulation-results-section {
+    background-color: var(--cor-cinza-claro);
+}
+#simulation-results-section .container {
+    max-width: 800px;
+}
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.result-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--cor-azul);
+}
+.result-item h4 {
+    font-size: 1.1em;
+    color: var(--cor-azul-escuro);
+    margin-bottom: 8px;
+}
+.result-item p {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--cor-preto);
+    margin-bottom: 0;
+}
+.result-item.result-highlight {
+    border-left-color: var(--cor-amarelo);
+}
+.result-item.result-highlight h4 {
+    color: var(--cor-amarelo-escuro);
+}
+.result-item.result-highlight p {
+    font-size: 1.5em;
+    color: var(--cor-amarelo-escuro);
+}
+.disclaimer {
+    font-size: 0.9em;
+    color: var(--cor-cinza-escuro);
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Empresa Insights Page */
+/* ... outros estilos ... */
+
+#company-charts .chart-container {
+    background-color: #fff;
+    padding: 70px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    margin-bottom: 40px;
+    text-align: center;
+
+    /* --- CONTROLE DE TAMANHO --- */
+    width: 100%; /* Opcional: se quiser que ocupe a largura do seu container pai até o max-width */
+    margin-left: auto;   /* Para centralizar o contêiner se ele for menor que o espaço disponível */
+    margin-right: auto;  /* Para centralizar o contêiner */
+    height: 450px; /* Defina uma altura fixa se desejar, ou deixe o Chart.js calcular */
+                        /* Se definir altura, certifique-se que maintainAspectRatio: false no JS */
+}
+
+/* Estilo para o canvas, se necessário (geralmente o Chart.js lida bem) */
+#company-charts .chart-container canvas {
+    max-width: 100%; /* Garante que o canvas não ultrapasse o contêiner */
+    height: auto !important; /* Deixe o Chart.js definir a altura ou defina uma específica acima no .chart-container */
+    /* Para garantir que o Chart.js possa controlar a altura se você definiu no container: */
+    /* Se você definiu 'height' no .chart-container, use maintainAspectRatio: false no JS do Chart.js */
+}
+
+/* ... outros estilos ... */
+
+/* Em css/style.css */
+#company-charts > .container { /* Seleciona o .container que é filho direto de #company-charts */
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha se não couberem */
+    gap: 30px; /* Espaçamento entre os gráficos */
+    justify-content: center; /* Centraliza os gráficos se houver espaço sobrando na linha */
+}
+
+/* Estilo específico para o contêiner do gráfico de painéis */
+#paineisChartContainer {
+    width: 890px !important;
+    /* max-width: 100%; */ /* Você pode querer manter isso para que não quebre o layout em telas muito pequenas,
+                             ou remover se a largura fixa de 890px for mandatória */
+    margin-left: auto; /* Para centralizar se o container pai for maior */
+    margin-right: auto;
+    /* height: 400px; */ /* Defina uma altura se desejar */
+}
+
+
+
+/* Para telas menores, você pode querer que eles voltem a ser empilhados */
+@media (max-width: 768px) {
+    #company-charts .chart-container {
+        flex-basis: 100%; /* Cada gráfico ocupa a largura total */
+    }
+}
+#company-charts .chart-container h3 {
+    margin-bottom: 25px;
+}
+.chart-placeholder {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--cor-cinza-medio);
+    margin-bottom: 15px;
+}
+.chart-description {
+    font-size: 0.95em;
+    color: var(--cor-cinza-escuro);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* Footer */
+footer {
+    background-color: #003366;
+    color: var(--cor-cinza-claro);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: auto; /* Para fixar no fim da página se o conteúdo for curto */
+}
+
+footer p {
+    margin-bottom: 5px;
+    color: var(--cor-cinza-claro);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    header nav {
+        margin-top: 15px;
+    }
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    #hero h2 { font-size: 2.5em; }
+    #hero p { font-size: 1em; }
+
+    #benefits .benefit-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    #benefits .card {
+        flex-basis: 100%;
+        max-width: 400px; /* Limita a largura em telas menores */
+    }
+
+    .results-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+}

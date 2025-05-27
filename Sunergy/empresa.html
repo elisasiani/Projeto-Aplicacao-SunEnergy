@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights do Mercado - SunEnergy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- ADICIONE ESTA LINHA -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="SunEnergy Logo" class="logo-img">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="simulacao.html">Simulação</a></li>
+                    <li><a href="empresa.html" class="active">Empresa Insights</a></li>
+                    <li><a href="cadastro.html">Sign</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-title">
+            <div class="container">
+                <h2>Insights do Mercado de Energia Solar</h2>
+                <p>Análises e tendências do setor para empresas e parceiros.</p>
+            </div>
+        </section>
+
+        <section id="company-charts">
+            <div class="container">
+                <div class="chart-container">
+                    <h3>Regiões com Maior Venda de Painéis</h3>
+                    <canvas id="regioesChart"></canvas> <!-- ALTERADO DE IMG PARA CANVAS -->
+                    <p class="chart-description">Análise das regiões do país onde a SunEnergy tem maior penetração de mercado e volume de instalações.</p>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Mês com Maior Volume de Vendas</h3>
+                    <canvas id="mesesChart"></canvas> <!-- ALTERADO DE IMG PARA CANVAS -->
+                    <p class="chart-description">Identificação dos períodos de maior procura por sistemas fotovoltaicos, auxiliando no planejamento estratégico.</p>
+                </div>
+
+                <div class="chart-container" id="paineisChartContainer"> <!-- Adicionamos um ID ao contêiner -->
+                    <h3>Tipos de Painéis Mais Vendidos</h3>
+                    <canvas id="paineisChart"></canvas>
+                    <p class="chart-description">Quais modelos e potências de painéis solares são os mais populares entre nossos clientes, indicando preferências e necessidades.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 SunEnergy. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script> <!-- Se for gerar gráficos com JS, descomente -->
+</body>
+</html>
