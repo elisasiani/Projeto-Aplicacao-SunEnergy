@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulação de Economia - SunEnergy</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -72,58 +73,57 @@
                     </div>
 
                     <div class="form-group-kwh-history">
-                        <h3>Gasto Mensal em kWh (Últimos 12 Meses)</h3>
-                        <p class="text-sm text-gray-600 mb-4">Por favor, insira o consumo em kWh da sua conta de luz para cada um dos últimos 12 meses. Isso nos ajudará a gerar um gráfico de economia mais preciso.</p>
-                        <div class="kwh-months-grid">
-                            <div class="kwh-month-item">
-                                <label for="kwhJan">Jan:</label>
-                                <input type="number" id="kwhJan" name="kwhJan" min="0" step="1" value="" required>
+                        <h2>Consumo de Energia (kWh - Últimos 12 Meses)</h2>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="jan_kwh">Janeiro:</label>
+                                    <input type="number" id="jan_kwh" name="jan_kwh" value="300" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fev_kwh">Fevereiro:</label>
+                                    <input type="number" id="fev_kwh" name="fev_kwh" value="280" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mar_kwh">Março:</label>
+                                    <input type="number" id="mar_kwh" name="mar_kwh" value="320" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="abr_kwh">Abril:</label>
+                                    <input type="number" id="abr_kwh" name="abr_kwh" value="290" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mai_kwh">Maio:</label>
+                                    <input type="number" id="mai_kwh" name="mai_kwh" value="270" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="jun_kwh">Junho:</label>
+                                    <input type="number" id="jun_kwh" name="jun_kwh" value="260" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="jul_kwh">Julho:</label>
+                                    <input type="number" id="jul_kwh" name="jul_kwh" value="250" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ago_kwh">Agosto:</label>
+                                    <input type="number" id="ago_kwh" name="ago_kwh" value="275" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="set_kwh">Setembro:</label>
+                                    <input type="number" id="set_kwh" name="set_kwh" value="295" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="out_kwh">Outubro:</label>
+                                    <input type="number" id="out_kwh" name="out_kwh" value="310" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nov_kwh">Novembro:</label>
+                                    <input type="number" id="nov_kwh" name="nov_kwh" value="305" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dez_kwh">Dezembro:</label>
+                                    <input type="number" id="dez_kwh" name="dez_kwh" value="330" min="0" required><span>kWh</span>
+                                </div>
                             </div>
-                            <div class="kwh-month-item">
-                                <label for="kwhFev">Fev:</label>
-                                <input type="number" id="kwhFev" name="kwhFev" min="0" step="1" value="" required>
-                            </div>
-                            <div class="kwh-month-item">
-                                <label for="kwhMar">Mar:</label>
-                                <input type="number" id="kwhMar" name="kwhMar" min="0" step="1" value="" required>
-                            </div>
-                            <div class="kwh-month-item">
-                                <label for="kwhAbr">Abr:</label>
-                                <input type="number" id="kwhAbr" name="kwhAbr" min="0" step="1" value="" required>
-                            </div>
-                            <div class="kwh-month-item">
-                                <label for="kwhMai">Mai:</label>
-                                <input type="number" id="kwhMai" name="kwhMai" min="0" step="1" value="" required>
-                            </div>
-                            <div class="kwh-month-item">
-                                <label for="kwhJun">Jun:</label>
-                                <input type="number" id="kwhJun" name="kwhJun" min="0" step="1" value="" required>
-                            </div>
-                            <div class="kwh-month-item">
-                                <label for="kwhJul">Jul:</label>
-                                <input type="number" id="kwhJul" name="kwhJul" min="0" step="1" value="" required>
-                            </div>
-                            <div class="kwh-month-item">
-                                <label for="kwhAgo">Ago:</label>
-                                <input type="number" id="kwhAgo" name="kwhAgo" min="0" step="1" value="" required>
-                            </div>
-                            <div class="kwh-month-item">
-                                <label for="kwhSet">Set:</label>
-                                <input type="number" id="kwhSet" name="kwhSet" min="0" step="1" value="" required>
-                            </div>
-                            <div class="kwh-month-item">
-                                <label for="kwhOut">Out:</label>
-                                <input type="number" id="kwhOut" name="kwhOut" min="0" step="1" value="" required>
-                            </div>
-                            <div class="kwh-month-item">
-                                <label for="kwhNov">Nov:</label>
-                                <input type="number" id="kwhNov" name="kwhNov" min="0" step="1" value="" required>
-                            </div>
-                            <div class="kwh-month-item">
-                                <label for="kwhDez">Dez:</label>
-                                <input type="number" id="kwhDez" name="kwhDez" min="0" step="1" value="" required>
-                            </div>
-                        </div>
                     </div>
                     <button type="submit" class="cta-button">Realizar Simulação</button>
                 </form>
@@ -158,8 +158,8 @@
                         <h4>VALOR ESTIMADO DO SISTEMA:</h4>
                         <p id="valorSistema">R$ 0,00</p>
                     </div>
-                    <div class="tabs">
-                        <h4>GRÁFICO DE ECONOMIA</h4>
+                    <div style="height:300px; margin-top: 2rem;">
+                        <canvas id="ganhoMensalChart"></canvas>
                     </div>
                 </div>
                 </div>

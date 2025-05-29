@@ -10,80 +10,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const producaoMensalEl = document.getElementById('producaoMensal');
     const valorSistemaEl = document.getElementById('valorSistema');
 
-    // Carrega as tarifas de um arquivo JSON
-    async function loadTarifas() {
-        try {
-            const response = await fetch('tarifas.json'); // Assumindo que tarifas.json está na raiz ou caminho relativo
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            tarifasPorEstado = await response.json();
-            console.log('Tarifas carregadas com sucesso:', tarifasPorEstado);
-        } catch (error) {
-            console.error("Erro ao carregar as tarifas por estado:", error);
-            showMessage('Erro ao carregar dados de tarifas. Usando valores padrão.', 'error');
-            // Fallback para tarifas padrão se o carregamento falhar
-            tarifasPorEstado = {
-                "AC": 0.80, "AL": 0.88, "AP": 0.75, "AM": 0.82, "BA": 0.90, "CE": 0.87,
-                "DF": 0.92, "ES": 0.84, "GO": 0.89, "MA": 0.83, "MT": 0.95, "MS": 0.93,
-                "MG": 0.85, "PA": 0.78, "PB": 0.86, "PE": 0.89, "PI": 0.81, "PR": 0.91,
-                "RJ": 0.88, "RN": 0.85, "RO": 0.79, "RR": 0.77, "RS": 0.94, "SC": 0.90,
-                "SP": 0.87, "SE": 0.84, "TO": 0.80
-            };
-        }
-    }
-
-    // Carrega as tarifas assim que o DOM estiver pronto
-    loadTarifas();
-
-    if (simulationForm) {
-        simulationForm.addEventListener('submit', async function(event) { // Tornar a função assíncrona
+    if (simulationForm) {   
+        simulationForm.addEventListener('submit', function(event) {
             event.preventDefault();
 
             // Obter dados do formulário
             const nome = document.getElementById('nome').value;
             const cep = document.getElementById('cep').value;
-            const uf = document.getElementById('uf').value; // 'uf' já é o valor da UF
+            const uf = document.getElementById('uf').value;
             const gastoMensal = parseFloat(document.getElementById('gastoMensal').value);
             const concessionaria = document.getElementById('concessionaria').value;
             const email = document.getElementById('email').value;
-
-            // Validação básica de entrada
-            if (isNaN(gastoMensal) || gastoMensal <= 0) {
-                showMessage('Por favor, insira um gasto mensal válido.', 'error');
-                return;
-            }
-            if (!uf) {
-                showMessage('Por favor, selecione seu estado (UF).', 'error');
-                return;
-            }
 
             // --- LÓGICA DE SIMULAÇÃO SIMPLIFICADA ---
             // Estes são valores MUITO aproximados e devem ser ajustados
             // com dados reais e específicos da empresa e região.
 
-            // 1. Tarifas por Estado (dados carregados de um arquivo JSON)
-            // Certifique-se de que as tarifas foram carregadas antes de usá-las
-            // Se a função loadTarifas for chamada no DOMContentLoaded, as tarifas já devem estar disponíveis.
-            // No entanto, para garantir, você pode adicionar uma verificação ou um await aqui se necessário.
-            const tarifaEnergia = tarifasPorEstado[uf] || 0.85; // Usa a tarifa específica ou uma média padrão
-            const consumoMensalKWh = gastoMensal / tarifaEnergia;
+            // 1. Estimar Consumo Mensal em kWh
+            // Assumindo uma tarifa média de R$ 0,85/kWh (varia MUITO por região e concessionária)
+            const tarifaMediaEnergia = 0.85; 
+            const consumoMensalKWh = gastoMensal / tarifaMediaEnergia;
 
             // 2. Potência do Kit (kWp)
-            // Fator de capacidade médio (varia com irradiação local, perdas, etc.)
+            // Um sistema bem dimensionado pode gerar o equivalente ao consumo.
+            // Fator de capacidade médio (varia com irradiação local, perdas, etc.) - ex: 120 kWh/mês por kWp instalado.
+            // Este é um ponto CRÍTICO e precisa de dados de irradiação por UF ou CEP.
+            // Para simplificar, vamos usar um fator geral.
+            // Ex: Para cada 130 kWh de consumo, precisamos de aprox. 1 kWp.
             let fatorIrradiacao = 130; // kWh gerados por kWp por mês (média Brasil, varia muito)
+            if (['SP', 'RJ', 'MG', 'ES', 'SUL'].includes(uf)) fatorIrradiacao = 120; // Sudeste e Sul um pouco menos
+            if (['NE', 'N', 'CO'].some(reg => ['BA','SE','AL','PE','PB','RN','CE','PI','MA', 'TO','PA','AP','AM','RR','AC','RO', 'MT','MS','GO','DF'].includes(uf))) fatorIrradiacao = 140; // Nordeste, Norte, Centro-Oeste mais
 
-            // Ajuste do fator de irradiação por região/estado
-            const sudesteSul = ['SP', 'RJ', 'MG', 'ES', 'PR', 'SC', 'RS'];
-            const nordesteNorteCentroOeste = ['BA', 'SE', 'AL', 'PE', 'PB', 'RN', 'CE', 'PI', 'MA',
-                                              'TO', 'PA', 'AP', 'AM', 'RR', 'AC', 'RO',
-                                              'MT', 'MS', 'GO', 'DF'];
-
-            if (sudesteSul.includes(uf)) {
-                fatorIrradiacao = 120; // Sudeste e Sul um pouco menos
-            } else if (nordesteNorteCentroOeste.includes(uf)) {
-                fatorIrradiacao = 140; // Nordeste, Norte, Centro-Oeste mais
-            }
 
             const potenciaKitKWp = consumoMensalKWh / fatorIrradiacao;
 
@@ -98,21 +55,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const areaNecessariaM2 = quantidadeModulos * areaPorModuloM2;
 
             // 5. Produção Mensal Estimada (kWh)
+            // Recalcular com base na potência do kit para ser mais preciso
             const producaoMensalEstimadaKWh = potenciaKitKWp * fatorIrradiacao;
 
             // 6. Economia Anual Estimada
-            const percentualCobertura = 0.95; // Estima que o sistema cubra 95% do gasto
+            // Pode ser um pouco menor que o gasto total devido a taxas mínimas, impostos, etc.
+            // Vamos estimar que o sistema cubra 90-95% do gasto.
+            const percentualCobertura = 0.95;
             const economiaMensalEstimada = gastoMensal * percentualCobertura;
             const economiaAnualEstimada = economiaMensalEstimada * 12;
 
             // 7. VALOR ESTIMADO DO SISTEMA FOTOVOLTAICO
+            // Varia MUITO. Ex: R$ 4.000 a R$ 7.000 por kWp instalado.
+            // Vamos usar uma média, mas isso deve vir de uma tabela de preços da SunEnergy.
             let custoPorKWp = 5500; // R$
-            if (potenciaKitKWp < 3) {
-                custoPorKWp = 6500; // Sistemas menores tendem a ser mais caros por kWp
-            } else if (potenciaKitKWp > 10) {
-                custoPorKWp = 4500; // Sistemas maiores mais baratos por kWp
-            }
-
+            if (potenciaKitKWp < 3) custoPorKWp = 6500; // Sistemas menores tendem a ser mais caros por kWp
+            else if (potenciaKitKWp > 10) custoPorKWp = 4500; // Sistemas maiores mais baratos por kWp
+            
             const valorSistemaEstimado = potenciaKitKWp * custoPorKWp;
 
             // --- Fim da Lógica de Simulação ---
@@ -129,14 +88,65 @@ document.addEventListener('DOMContentLoaded', () => {
                 resultsSection.style.display = 'block';
                 resultsSection.scrollIntoView({ behavior: 'smooth' });
             }
-
+            
             // Aqui você poderia enviar os dados para um backend
             console.log({
                 nome, cep, uf, gastoMensal, concessionaria, email,
                 economiaAnualEstimada, areaNecessariaM2, potenciaKitKWp,
                 quantidadeModulos, producaoMensalEstimadaKWh, valorSistemaEstimado
             });
-            showMessage('Simulação realizada! Entraremos em contato em breve.');
+            // alert('Simulação realizada! Entraremos em contato em breve.');
+            // --- GRÁFICO DE SIMULAÇÃO DE GANHO MENSAL (NOVO) ---
+            const ctxGanhoMensal = document.getElementById('ganhoMensalChart');
+            if (ctxGanhoMensal) {
+                const ganhoMensal = economiaMensalEstimada;
+                const dadosMensais = Array.from({ length: 24 }, (_, i) => {
+                    return ganhoMensal * (i + 1); // acumulado mês a mês
+                });
+                const labels = Array.from({ length: 24 }, (_, i) => `Mês ${i + 1}`);
+
+                new Chart(ctxGanhoMensal, {
+                    type: 'line',
+                    data: {
+                        labels,
+                        datasets: [{
+                            label: 'Ganho Acumulado (R$)',
+                            data: dadosMensais,
+                            fill: true,
+                            backgroundColor: 'rgba(255, 215, 0, 0.2)',
+                            borderColor: 'rgba(255, 215, 0, 1)',
+                            pointBackgroundColor: 'rgba(255, 215, 0, 1)',
+                            tension: 0.3
+                        }]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Projeção de Economia Acumulada em 24 Meses',
+                                color: '#1a1a1a',
+                                font: { size: 16 }
+                            },
+                            legend: { display: false }
+                        },
+                        scales: {
+                            y: {
+                                ticks: {
+                                    callback: function (value) {
+                                        return 'R$ ' + value.toLocaleString('pt-BR');
+                                    },
+                                    color: '#1a1a1a'
+                                },
+                                beginAtZero: true
+                            },
+                            x: {
+                                ticks: { color: '#1a1a1a' }
+                            }
+                        }
+                    }
+                });
+            }
         });
     }
 
@@ -322,6 +332,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
+
+        
+
     } else {
         // Condição para quando não estamos na página da empresa, para evitar logs desnecessários no console.
         if (window.location.pathname.includes("empresa.html")) {
