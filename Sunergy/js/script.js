@@ -96,14 +96,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 quantidadeModulos, producaoMensalEstimadaKWh, valorSistemaEstimado
             });
             // alert('Simulação realizada! Entraremos em contato em breve.');
+
             // --- GRÁFICO DE SIMULAÇÃO DE GANHO MENSAL (NOVO) ---
             const ctxGanhoMensal = document.getElementById('ganhoMensalChart');
             if (ctxGanhoMensal) {
                 const ganhoMensal = economiaMensalEstimada;
-                const dadosMensais = Array.from({ length: 24 }, (_, i) => {
+                const dadosMensais = Array.from({ length: 12 }, (_, i) => {
                     return ganhoMensal * (i + 1); // acumulado mês a mês
                 });
-                const labels = Array.from({ length: 24 }, (_, i) => `Mês ${i + 1}`);
+                const labels = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
 
                 new Chart(ctxGanhoMensal, {
                     type: 'line',
@@ -124,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         plugins: {
                             title: {
                                 display: true,
-                                text: 'Projeção de Economia Acumulada em 24 Meses',
+                                text: 'Projeção de Economia Acumulada em 12 Meses',
                                 color: '#1a1a1a',
                                 font: { size: 16 }
                             },
