@@ -197,7 +197,7 @@ body {
 }
 /* Header */
 header {
-    background-color: #003366;
+    background-color: #ffffff;
     color: #ffffff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     top: 0;
@@ -242,7 +242,7 @@ header nav ul li {
 
 header nav ul li a {
     text-decoration: none;
-    color: #ffffff;
+    color: #003366;
     font-weight: bold;
     padding: 5px 0;
     transition: color 0.3s ease, border-bottom 0.3s ease;
@@ -596,3 +596,184 @@ footer p {
         grid-template-columns: 1fr; /* Uma coluna em telas menores */
     }
 }
+
+
+
+.solar-banner {
+    position: relative;
+    background-image: url(''); /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    padding: 0 5%;
+  }
+  
+  .solar-banner .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 32, 64, 0.6); /* sombra azul translúcida */
+    z-index: 1;
+  }
+  
+  .solar-banner .content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+  }
+  
+  .solar-banner .tag {
+    display: inline-block;
+    background-color: #003366; 
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-radius: 4px;
+  }
+  
+  .solar-banner h1 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    width: 550px;
+  }
+  
+  .solar-banner p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    width: 550px;
+    color:#ffffff
+  }
+  
+  .solar-banner .btn {
+    display: inline-block;
+    background-color: #003366;
+    color: white;
+    padding: 12px 25px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s;
+  }
+  
+  .solar-banner .btn:hover {
+    background-color: #238d4a;
+  }
+
+
+
+  .benefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #003366; /* azul escuro */
+    color: white;
+    padding: 60px 20px;
+    gap: 200px;
+  }
+  
+  .section-tag {
+    display: inline-block;
+    background-color: #29b45a;
+    color: white;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .benefits-left {
+    flex: 0 0 400px;
+  }
+  
+  .benefits-left h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .benefits-left p {
+    margin-bottom: 25px;
+    color: #d0d0d0;
+  }
+  
+  .whatsapp-btn {
+    display: inline-block;
+    background-color: #f7931e;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  .whatsapp-btn:hover {
+    background-color: #e6820f;
+  }
+  
+  .benefits-right {
+    flex: 1 1 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .benefit-item {
+    width: 500px;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    background: white;
+    color: #022b45;
+    padding: 15px 20px;
+    border-radius: 10px;
+    gap: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .benefit-item img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .benefit-item h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .benefit-item p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
