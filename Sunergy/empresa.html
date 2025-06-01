@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insights do Mercado - SunEnergy</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="static/css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- ADICIONE ESTA LINHA -->
 </head>
 <body>
     <header>
         <div class="container">
             <a href="index.html" class="logo-link">
-                <img src="images/logo.png" alt="SunEnergy Logo" class="logo-img">
+                <img src="static/images/logo.png" alt="SunEnergy Logo" class="logo-img">
             </a>
             <nav>
                 <ul>
@@ -31,6 +31,9 @@
                 <h2>Insights do Mercado de Energia Solar</h2>
                 <p>Análises e tendências do setor para empresas e parceiros.</p>
             </div>
+            <div>
+                <a href="placa.html" class="botao-cadastro">Cadastrar Placa</a>
+            </div>
         </section>
 
         <section id="company-charts">
@@ -38,19 +41,25 @@
                 <div class="chart-container">
                     <h3>Regiões com Maior Venda de Painéis</h3>
                     <canvas id="regioesChart"></canvas> <!-- ALTERADO DE IMG PARA CANVAS -->
+                    <br>
                     <p class="chart-description">Análise das regiões do país onde a SunEnergy tem maior penetração de mercado e volume de instalações.</p>
+                    <br>
                 </div>
-
+                <br>
                 <div class="chart-container">
                     <h3>Mês com Maior Volume de Vendas</h3>
                     <canvas id="mesesChart"></canvas> <!-- ALTERADO DE IMG PARA CANVAS -->
+                    <br>
                     <p class="chart-description">Identificação dos períodos de maior procura por sistemas fotovoltaicos, auxiliando no planejamento estratégico.</p>
+                    <br>
                 </div>
 
                 <div class="chart-container" id="paineisChartContainer"> <!-- Adicionamos um ID ao contêiner -->
                     <h3>Tipos de Painéis Mais Vendidos</h3>
                     <canvas id="paineisChart"></canvas>
+                    <br>
                     <p class="chart-description">Quais modelos e potências de painéis solares são os mais populares entre nossos clientes, indicando preferências e necessidades.</p>
+                    <br>
                 </div>
             </div>
         </section>

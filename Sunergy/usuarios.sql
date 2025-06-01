@@ -1,3 +1,4 @@
+-- Active: 1748714702988@@localhost@3306@cadastro_usuarios
 CREATE DATABASE cadastro_usuarios;
 
 USE cadastro_usuarios;
