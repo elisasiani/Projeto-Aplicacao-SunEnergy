@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Placa Solar</title>
+    <link rel="stylesheet" href="static/css/style-placa.css">
+    <link rel="icon" href="static/images/logo.png" type="image/png">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="static/images/logo.png" alt="SunEnergy Logo" class="logo-img">
+            <nav>
+                <ul style="padding-left: 0">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="simulacao.html">Simulação</a></li>
+                    <li><a href="empresa.html">Empresa Insights</a></li>
+                    <li><a href="cadastro.html">Sign</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+
+            <div class="container-form">
+                <form action="/cadastro_placa" method="post">
+                    <label for="codigo">Código da Placa:</label>
+                    <input type="text" id="codigo" name="codigo" required>
+
+                    <label for="modelo">Modelo:</label>
+                    <input type="text" id="modelo" name="modelo" required>
+
+                    <label for="fabricante">Fabricante:</label>
+                    <input type="text" id="fabricante" name="fabricante" required>
+
+                    <label for="potencia">Potência (Watts):</label>
+                    <input type="number" id="potencia" name="potencia" required>
+
+                    <label for="tensao">Tensão (Volts):</label>
+                    <input type="number" step="0.1" id="tensao" name="tensao" required>
+
+                    <label for="corrente">Corrente (Amperes):</label>
+                    <input type="number" step="0.1" id="corrente" name="corrente" required>
+
+                    <label for="tipo">Tipo:</label>
+                    <select id="tipo" name="tipo" required style="width:100%; padding:10px; background-color: white;">
+                        <option value="">Selecione</option>
+                        <option value="Monocristalina">Monocristalina</option>
+                        <option value="Policristalina">Policristalina</option>
+                        <option value="Filme Fino">Filme Fino</option>
+                    </select>
+                    <br>
+                    <br>
+                    <button type="submit">Cadastrar Placa</button>
+                </form>
+            </div>
+        </main>
+</body>

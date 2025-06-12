@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comparação de Economia</title>
+  <link rel="stylesheet" href="static/css/style-comparacao.css">
+  <link rel="icon" href="static/images/logo.png" type="image/png">
+</head>
+
+<body>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background: #003366;
+      color: white;
+    }
+
+    .logo-img {
+      width: 120px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .container-comparacao {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .container-comparacao h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .comparacao {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .antes,
+    .depois {
+      flex: 1 1 300px;
+      background: #f2f2f2;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .economia,
+    .retorno {
+      background: #dff0d8;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer-social img {
+      margin: 0 5px;
+    }
+  </style>
+
+  <header>
+    <div class="container">
+      <img src="static/images/logo.png" alt="SunEnergy Logo" class="logo-img">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="simulacao.html">Simulação</a></li>
+          <li><a href="empresa.html">Empresa Insights</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-comparacao">
+      <h1>Comparativo de Consumo e Economia</h1>
+
+      <section class="comparacao">
+        <div class="antes">
+          <h2>Antes</h2>
+          <p><strong>Consumo Médio:</strong> 400 kWh/mês</p>
+          <p><strong>Gasto Mensal:</strong> R$ 350,00</p>
+          <p><strong>Gasto Anual:</strong> R$ 4.200,00</p>
+        </div>
+
+        <div class="depois">
+          <h2>Agora com Energia Solar</h2>
+          <p><strong>Consumo Médio:</strong> 50 kWh/mês (da rede)</p>
+          <p><strong>Gasto Mensal:</strong> R$ 50,00</p>
+          <p><strong>Gasto Anual:</strong> R$ 600,00</p>
+        </div>
+      </section>
+
+      <section class="economia">
+        <h2>Economia Acumulada</h2>
+        <p><strong>Economia Mensal:</strong> R$ 300,00</p>
+        <p><strong>Economia Anual:</strong> R$ 3.600,00</p>
+        <p><strong>Desde a Instalação:</strong> R$ 7.200,00 em 2 anos</p>
+      </section>
+
+      <section class="retorno">
+        <h2>Retorno sobre o Investimento</h2>
+        <p>Você recuperou aproximadamente 50% do investimento inicial em apenas 2 anos.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <img src="static/images/logo.png" alt="SunEnergy">
+      <div class="footer-bottom">
+        <div class="footer-social">
+          <a href="#"><img src="static/images/whatsapp.png" style="width:15px"></a>
+          <a href="#"><img src="static/images/facebook.png" style="width:15px"></a>
+          <a href="#"><img src="static/images/logotipo-do-linkedin.png" style="width:15px"></a>
+          <a href="#"><img src="static/images/youtube.png" style="width:20px"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

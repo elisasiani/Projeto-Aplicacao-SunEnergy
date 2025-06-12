@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - SunEnergy</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="icon" href="static/images/logo.png" type="image/png">
+</head>
+
+<style>
+    section {
+        background-color: #036;
+    }
+
+    .hero {
+        position: relative;
+        background-image: url('static/images/como-analisar-a-qualidade-de-um-painel-solar.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        /* Alinha à esquerda */
+        text-align: left;
+        /* Alinha o texto à esquerda */
+        color: white;
+        padding-left: 50px;
+        /* Espaçamento da borda esquerda */
+        background-attachment: fixed;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 700px;
+        padding: 20px;
+
+    }
+
+    .team a {
+        text-decoration: none;
+    }
+
+    .team :hover {
+        background-color: #e9ebec;
+    }
+
+    /* Para telas menores: centraliza tudo */
+    @media (max-width: 768px) {
+        .hero {
+            justify-content: center;
+            /* Centraliza horizontalmente */
+            align-items: center;
+            /* Centraliza verticalmente */
+            padding-left: 0;
+            /* Remove o espaçamento da esquerda */
+            text-align: center;
+            /* Centraliza o texto */
+        }
+
+        .hero-content {
+            text-align: center;
+            /* Centraliza o conteúdo */
+            max-width: 90%;
+        }
+    }
+
+
+
+
+    .push-1 {
+        margin-left: 8.33333%;
+    }
+
+    .home-about-line {
+
+        height: 1px;
+        width: 100%;
+        background-color: #ffffff;
+    }
+
+
+    @media (max-width: 920px) {
+        .home-about-title-2 {
+            font-size: 1em;
+            line-height: 32px;
+            font-weight: 600;
+        }
+    }
+
+    @media (min-width: 921px) {
+        .home-about-title-2 {
+            font-size: 1.5em;
+            line-height: 50px;
+            font-weight: 600;
+        }
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        font-weight: 400;
+        display: block;
+        color: #1E2126;
+        text-transform: none;
+        text-align: center;
+        font-family: "Galano Grotesque", sans-serif"
+
+    }
+
+    h1,
+    h2 {
+        margin: 0;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .space-80 {
+        width: 100%;
+        height: 80px;
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .zoom {
+            width: 95%;
+            object-fit: cover;
+            display: block;
+            padding: 30px;
+            float: right;
+            height: auto;
+            border-radius: 15px;
+        }
+    }
+
+    .zoom {
+        width: 45%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 15px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    img {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 720px) {
+        .container {
+            width: 700px;
+        }
+    }
+
+    @media (min-width: 520px) {
+        .container {
+            width: 500px;
+        }
+    }
+
+    @media (min-width: 420px) {
+        .container {
+            width: 400px;
+        }
+    }
+
+    .container {
+        margin: 0 auto;
+        width: 100%;
+        min-width: 320px;
+    }
+
+    @media (min-width: 720px) {
+        .container {
+            width: 750px;
+        }
+    }
+
+    @media (min-width: 520px) {
+        .container {
+            width: 700px;
+        }
+    }
+
+    @media (min-width: 420px) {
+        .container {
+            width: 400px;
+        }
+    }
+
+    .container {
+        margin: 0 auto;
+        width: 100%;
+        min-width: 320px;
+    }
+
+    .section-title {
+        font-size: 20px;
+        font-weight: 400;
+        text-align: center;
+        color: #003366;
+        text-transform: uppercase;
+        position: relative;
+        padding-bottom: 20px;
+    }
+
+    .descricao {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #264d45;
+        margin-bottom: 40px;
+        text-align: left;
+    }
+
+    .image-container {
+        text-align: center;
+    }
+
+    @media (min-width: 721px) {
+        #meuVideo2 {
+            width: 100%;
+            height: 70%;
+        }
+    }
+
+    .home-cta {
+        background-image: url(static/images/fale-conosco.png);
+        background-size: cover;
+        padding: 80px 0;
+    }
+
+    .grid-322 {
+        padding: 10px;
+    }
+
+    .align-center {
+        text-align: center;
+    }
+
+    .home-cta-icon {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+
+    .home-cta-icon svg {
+        height: 120px;
+        display: block;
+        justify-content: center;
+    }
+
+    .home-cta-icon svg path {
+        fill: #fff;
+    }
+
+    a {
+        color: inherit;
+        cursor: pointer;
+        font-size: inherit;
+    }
+
+    .button-white {
+        background-color: #fff;
+        color: #7AA752;
+    }
+
+    .button-lg {
+        height: 60px;
+        font-size: 18px;
+    }
+
+    .button {
+        height: 42px;
+        padding: 0 40px;
+        border-radius: 6px;
+        color: #036;
+        font-family: "Galano Grotesque", sans-serif;
+        cursor: pointer;
+        transition: all .3s;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        gap: 20px;
+    }
+
+    .button-lg svg {
+        height: 20px;
+    }
+
+    .button-white svg path {
+        fill: #036;
+    }
+
+    .button svg path {
+        transition: all .3s;
+    }
+
+    .home-highlight {
+        background-color: rgba(0, 82, 156, 0.36);
+        background-repeat: no-repeat;
+        background-position: -40px center, calc(100% + 40px) center;
+    }
+
+    .container-full {
+        width: 100%;
+        min-width: 320px;
+    }
+
+    .container-full:before,
+    .container-full:after,
+    .break:before,
+    .break:after {
+        display: table;
+        content: " ";
+    }
+
+    *,
+    *:before,
+    *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .space-60 {
+        width: 100%;
+        height: 60px;
+    }
+
+    @media (min-width: 1220px) {
+        .container-grid {
+            width: 1200px;
+        }
+    }
+
+    @media (min-width: 920px) {
+        .container-grid {
+            width: 900px;
+        }
+    }
+
+    @media (min-width: 720px) {
+        .container-grid {
+            width: 750px;
+        }
+    }
+
+    @media (min-width: 520px) {
+        .container-grid {
+            width: 700px;
+        }
+    }
+
+    @media (min-width: 420px) {
+        .container-grid {
+            width: 400px;
+        }
+    }
+
+    .container-grid {
+        margin: 0 auto;
+        width: 100%;
+        min-width: 320px;
+    }
+
+    .grid-322 {
+        padding: 10px;
+    }
+
+    .height-align {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .no-padding {
+        padding: 0;
+    }
+
+    .height-align-item {
+        display: flex;
+    }
+
+    .grid-322 {
+        padding: 30px;
+    }
+
+    .height-align-item {
+        display: flex;
+    }
+
+    @media (min-width: 1220px) {
+        .grid-lg-6 {
+            width: 50%;
+            float: left;
+        }
+    }
+
+    .home-highlight-card {
+        background-color: #013166;
+        padding: 60px 40px;
+        border-radius: 6px;
+        color: #fff;
+        font-size: 22px;
+    }
+
+    .home-highlight-card-2 {
+        background-color: #fff;
+        color: #013166;
+    }
+
+    .height-align-content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="static/images/logo.png" alt="SunEnergy Logo" class="logo-img">
+            <nav>
+                <ul style="padding-left: 0">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="simulacao.html">Simulação</a></li>
+                    <li><a href="empresa.html">Empresa Insights</a></li>
+                    <li><a href="cadastro.html">Sign</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" style="text-align: center;">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h2>Tecnologia solar:</h2>
+            <h1>
+                A solução energética para os nossos problemas que transforma a luz do sol em eletricidade limpa,
+                renovável e sustentável. Por meio de painéis fotovoltaicos, é possível captar a energia solar e
+                convertê-la em potência para residências, empresas e indústrias.
+            </h1>
+
+            <button onclick="scrollToSection()" aria-label="Scroll down"
+                style="color: #fff; background: none; border: none; padding: 0; margin-top: 40px; cursor: pointer; font-size: 20px;">
+                ↓Economize com a SunEnergy
+            </button>
+        </div>
+    </section>
+
+
+
+    <main>
+        <section>
+            <div id="futuro">
+                <div class="grid-100 push-1" style="background-color: #7AA752;color: #FFF; width: 83.33333%;">
+                    <div class="home-about-line">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <!-- Futuro -->
+                <section style="font-size:2em; text-align:left; color: #FFF; background-color: #036;">
+                    <h1 class="home-about-title-2" style="color: #fff; text-align: left; padding:20px">
+                        <span style="color: #689eca;">INOVAÇÃO</span><br>
+                        QUE CULTIVA O<br>
+                        <span style="color: #2061b6;">FUTURO DA AGRICULTURA</span>
+                    </h1>
+
+                    <img class="zoom" src="static/images/enegia renovavel.webp" style="float: right; margin:20px "
+                        alt="">
+
+                    <p
+                        style="text-align:left; margin: 0p; padding: 20px; padding-top:50px; font-size: 18px; color: #FFF; text-align: justify; font-weight: normal; max-width: 100% !important;">
+                        <strong style="font-size:24px; color: #FFF;">
+                            Ano de criação: </strong><br><br>
+                        A SunEnergy surgiu em 2025 com o propósito de desenvolver um projeto inovador focado em energia
+                        renovável, com ênfase na energia solar. O Sol é uma fonte limpa, abundante e praticamente
+                        inesgotável, e nosso projeto busca justamente aproveitar essa riqueza para suprir necessidades
+                        energéticas de maneira sustentável.
+
+                        Nos dedicamos a ser a melhor combinação entre profundidade técnica e uma abordagem pragmática na
+                        resolução de problemas. Nosso objetivo é conscientizar sobre a importância e os benefícios dos
+                        painéis solares, oferecendo essa tecnologia como uma solução eficaz e acessível para desafios
+                        energéticos, ao utilizar uma fonte renovável e ilimitada.
+                        <br><br>
+                        Com um time multidisciplinar e o uso de tecnologias de ponta, seguimos firmes no propósito de
+                        transformar a matriz energética, promovendo inovação que cultiva e impulsiona o futuro do
+                        setor.<br><br><br><br><br><br>
+                    </p>
+                    <strong
+                        style="text-align:left; color: #FFF; font-weight: 600;font-family:Verdana, Geneva, Tahoma, sans-serif;">
+                        <h1 class="home-about-title-2" style="color: #fff; text-align: left; padding:20px">
+                            <span style="color: #689eca;">REVOLUCIONANDO</span><br>
+                            A AGRICULTURA<br>
+                            <span style="color: #2061b6;;">UM HECTARE DE CADA VEZ</span>
+                        </h1>
+                    </strong>
+
+
+                    <img class="zoom" src="static/images/campus_fho.jpg" style=" float: left; margin:20px" alt="">
+                    <div class="texto_localizacao">
+                        <p
+                            style="text-align: left; margin: 0p; padding: 20px; padding-top: 10px;font-size: 18px;color: #FFF;text-align: justify; font-weight: normal; max-width: 100% !important;">
+                            <strong style="font-size:24px; color: #FFF;">
+                                Localização: </strong><br><br>
+                            Sediada em <em>Araras</em>, interior do estado de <em>São Paulo</em>. A SunEnergy nasceu do
+                            sonho de um grupo
+                            conseguir ajudar as pessoas que querem economizar mais com sua energia, melhorar o planeta e
+                            transformar a matriz energética brasileira, tornando-a mais limpa e sustentável. Observando
+                            o
+                            imenso potencial solar do nosso país e a crescente necessidade de soluções energéticas
+                            econômicas, decidimos embarcar nesta jornada.
+                            <br>No início, éramos uma pequena equipe operando em Araras e região, focados em projetos
+                            residenciais. Com dedicação, estudo contínuo das tecnologias e um compromisso inabalável com
+                            a
+                            satisfação do cliente, fomos crescendo e expandindo nossa atuação para projetos comerciais e
+                            industriais.
+                        </p>
+                        <br>
+                    </div>
+            </div>
+            <div class="grid-100 push-1" style="color: #FFF; width: 83.33333%;">
+                <div class="home-about-line">
+                </div>
+        </section>
+        </div>
+        </section>
+
+
+        <section class="benefits" style="background-color: #fff;">
+            <div class="benefits-left">
+                <h2 class="section-title">
+                    Conheça<span>Nossas políticas</span>
+                </h2>
+
+
+
+                <div class="container" style="max-width: 100%; margin: auto; color:#fff;">
+                    <br>
+                    <p class="descricao" style="color:#000">
+                        Na SunEnergy, nosso compromisso com a sustentabilidade é o alicerce que impulsiona todas as
+                        nossas
+                        ações. Nossa missão é oferecer soluções inovadoras e eficientes em energia solar, promovendo uma
+                        matriz energética mais limpa, econômica e responsável. Buscamos superar as expectativas de
+                        nossos
+                        clientes, parceiros e colaboradores, garantindo:<br><br>
+                        - Painéis solares de alta tecnologia e eficiência.<br>
+                        - Atendimento rigoroso aos requisitos legais e ambientais.<br>
+                        - Parcerias sólidas e confiáveis.<br>
+                        - Equipe especializada e comprometida.<br>
+                        - Fomento à sustentabilidade e à energia limpa.<br><br>
+                        A SunEnergy está comprometida com a melhoria contínua de seus processos, produtos e serviços,
+                        sempre
+                        buscando agregar valor aos seus clientes e contribuir para a construção de um futuro mais
+                        sustentável, com uma energia renovável, acessível e inesgotável.</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <div class="conatiner-full home-cta">
+            <div class="container">
+                <div class="grid-322 align-center">
+                    <div class="home-cta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+                            <!-- Círculo central do sol -->
+                            <circle cx="60" cy="60" r="20" fill="#FFFFFF" />
+
+                            <!-- Raios do sol -->
+                            <g stroke="#FFFFFF" stroke-width="4">
+                                <!-- Raios principais (cima, baixo, esquerda, direita) -->
+                                <line x1="60" y1="5" x2="60" y2="25" />
+                                <line x1="60" y1="95" x2="60" y2="115" />
+                                <line x1="5" y1="60" x2="25" y2="60" />
+                                <line x1="95" y1="60" x2="115" y2="60" />
+
+                                <!-- Raios diagonais -->
+                                <line x1="20" y1="20" x2="35" y2="35" />
+                                <line x1="85" y1="85" x2="100" y2="100" />
+                                <line x1="20" y1="100" x2="35" y2="85" />
+                                <line x1="85" y1="35" x2="100" y2="20" />
+                            </g>
+                        </svg>
+
+                    </div>
+                    <a href="https://web.whatsapp.com/send?phone=5519971694133&amp;text=Ol%C3%A1!%20Entro%20em%20contato%20pelo%20site%20da%20DROP"
+                        target="_blank" rel="noopener noreferrer">
+                        <button class="button button-lg button-white">
+                            <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 448">
+                                <path
+                                    d="m380.9,65.1C339,23.1,283.2,0,223.9,0,101.5,0,1.9,99.6,1.9,222c0,39.1,10.2,77.3,29.6,111L0,448l117.7-30.9c32.4,17.7,68.9,27,106.1,27h.1c122.3,0,224.1-99.6,224.1-222,0-59.3-25.2-115-67.1-157Zm-157,341.6c-33.2,0-65.7-8.9-94-25.7l-6.7-4-69.8,18.3,18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2,0-101.7,82.8-184.5,184.6-184.5,49.3,0,95.6,19.2,130.4,54.1s56.2,81.2,56.1,130.5c0,101.8-84.9,184.6-186.6,184.6Zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5,2.8-3.7,5.6-14.3,18-17.6,21.8-3.2,3.7-6.5,4.2-12,1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8,5.7-9.1,16.3-30.3,1.8-3.7.9-6.9-.5-9.7s-12.5-30.1-17.1-41.2c-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2s-9.7,1.4-14.8,6.9c-5.1,5.6-19.4,19-19.4,46.3s19.9,53.7,22.6,57.4c2.8,3.7,39.1,59.7,94.8,83.8,35.2,15.2,49,16.5,66.6,13.9,10.7-1.6,32.8-13.4,37.4-26.4s4.6-24.1,3.2-26.4c-1.3-2.5-5-3.9-10.5-6.6Z">
+                                </path>
+                            </svg>
+                            Fale conosco
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-full home-highlight">
+
+            <div class="space-60"></div>
+
+            <div class="container-grid">
+                <div class="grid-322 no-padding height-align">
+                    <div class="grid-322 grid-lg-6 height-align-item">
+                        <div class="home-highlight-card height-align-content">
+                            Com a SunEnergy, você alcança máxima eficiência energética, promovendo a união perfeita
+                            entre
+                            economia e sustentabilidade através do uso inteligente de painéis solares. </div>
+                    </div>
+                    <div class="grid-322 grid-lg-6 height-align-item">
+                        <div class="home-highlight-card home-highlight-card-2 height-align-content">
+                            Além disso, oferecemos soluções que visam a otimização do consumo energético, promovendo o
+                            uso
+                            eficiente e sustentável de recursos através da geração de energia solar. </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-60"></div>
+
+        </div>
+        <br>
+
+        <section id="time" style="background-color: #ffffff; padding: 20px;">
+            <h2 class="section-title">
+                Conheça<span>O nosso time</span>
+            </h2>
+
+            <br>
+            <br>
+            <div class="team">
+                <a href="https://www.linkedin.com/in/ana-elisa-siani-201542259/" target="_blank">
+                    <div class="team-member">
+                        <img src="static/images/ana.jpeg" alt="Ana">
+                        <h4>Ana Siani</h4>
+                        <p>Estudante de Sistemas de Informação</p>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/beatriz-castro-maia/" target="_blank">
+                    <div class="team-member">
+                        <img src="static/images/bia.jpg" alt="Beatriz">
+                        <h4>Beatriz Castro</h4>
+                        <p>Estudante de Sistemas de Informação</p>
+                    </div>
+                </a>
+                <a href="www.linkedin.com/in/eliane-ms" target="_blank">
+                    <div class="team-member">
+                        <img src="static/images/eliane.jpg" alt="Eliane">
+                        <h4>Eliane Silva</h4>
+                        <p>Estudante de Sistemas de Informação</p>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/lais-rovina-da-silva-664b5a222/" target="_blank">
+                    <div class="team-member">
+                        <img src="static/images/lais.jpg" alt="Laís">
+                        <h4>Laís Rovina</h4>
+                        <p>Estudante de Sistemas de Informação</p>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/liviacamargo-/" target="_blank">
+                    <div class="team-member">
+                        <img src="static/images/livia.jpg" alt="Livia">
+                        <h4>Livia Maria</h4>
+                        <p>Estudante de Sistemas de Informação</p>
+                    </div>
+                    <a href="https://www.linkedin.com/in/victor-cavenaghi/" target="_blank">
+                        <div class="team-member">
+                            <img src="static/images/victor.jpg" alt="Victor">
+                            <h4>Victor Cavenaghi</h4>
+                            <p>Estudante de Sistemas de Informação</p>
+                        </div>
+                    </a>
+                </a>
+
+            </div>
+        </section>
+
+        <section style="background-color: rgb(255, 255, 255); padding: 0;">
+            <div id="produza">
+                <br>
+                <br>
+                <h2 class="section-title">
+                    Saiba mais obre<span> Nossa visao </span>
+                </h2>
+
+                <div style="display: flex; align-items: center; ">
+                    <div class="image-container " style="flex: 1;">
+                        <p
+                            style=" padding: 60px 20px; padding-top: 10px; font-size: 18px; color: #000; text-align: justify; max-width: 100% !important;">
+                            A SunEnergy é a sua parceira ideal para conquistar o máximo de eficiência e economia no
+                            menor
+                            tempo possível. Nosso compromisso é impulsionar a sustentabilidade e a autonomia energética
+                            dos
+                            nossos clientes por meio de soluções inovadoras e personalizadas em energia solar. Nossos
+                            valores orientam cada passo da nossa trajetória: inovação constante para oferecer as
+                            melhores
+                            tecnologias, foco no cliente para entender suas necessidades específicas, qualidade
+                            inquestionável em todos os nossos sistemas e serviços, e eficiência para otimizar o consumo
+                            e
+                            maximizar os benefícios. Com a SunEnergy, você transforma o sol em uma fonte inesgotável de
+                            oportunidades e garante um futuro mais sustentável e econômico.
+                        </p>
+
+
+                        <!-- Vídeo -->
+                        <video id="meuVideo2" autoplay loop muted
+                            style="width: 100%; display: flex; align-items: center; justify-content: center;">
+                            <source src="static/video/SunEnergy.mp4" type="video/mp4">
+                            Seu navegador não suporta o vídeo.
+                        </video>
+
+                        <!-- Fim Vídeo -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="static/images/logo.png" alt="Retorno sobre o investimento">
+                <div class="footer-bottom">
+                    <div class="footer-social">
+                        <a href="#"><img src="static/images/whatsapp.png" style="width:15px" alt="WhatsApp"></a>
+                        <a href="#"><img src="static/images/facebook.png" style="width:15px" alt="Facebook"></a>
+                        <a href="#"><img src="static/images/logotipo-do-linkedin.png" style="width:15px"
+                                alt="Linkedin"></a>
+                        <a href="#"><img src="static/images/youtube.png" style="width:20px" alt="Youtube"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Páginas</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="simulacao.html">Simulação</a></li>
+                    <li><a href="empresa.html">Empresa Insight</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Soluções</h3>
+                <ul>
+                    <li><a href="cadastro.html">Sign</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom" style="margin-top: 40px;">
+            <p style="color:white!important;">© 2025 Energia Solar Sustentável - Projeto Aplicado</p>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection() {
+            const target = document.getElementById('futuro');
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+
+</body>
+
+</html>

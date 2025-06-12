@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights do Mercado - SunEnergy</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+    <link rel="icon" href="static/images/logo.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="static/images/logo.png" alt="SunEnergy Logo" class="logo-img">
+            </a>
+            <nav>
+                <ul style="padding-left: 0">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="simulacao.html">Simulação</a></li>
+                    <li><a href="empresa.html" >Empresa Insights</a></li>
+                    <li><a href="cadastro.html">Sign</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main style="height: 2000px;">
+        <section class="page-title">
+            <div class="container">
+                <h2>Insights do Mercado de Energia Solar</h2>
+                <p>Análises e tendências do setor para empresas e parceiros.</p>
+            </div>
+            <div>
+                <a href="placa.html" class="botao-cadastro">Cadastrar Placa</a>
+            </div>
+        </section>
+
+        <br>
+        <br>
+        <section id="company-charts">
+            <div class="container">
+                <div class="chart-container">
+                    <h3>Regiões com Maior Venda de Painéis</h3>
+                    <canvas id="regioesChart"></canvas> <!-- ALTERADO DE IMG PARA CANVAS -->
+                    <br>
+                    <p class="chart-description">Análise das regiões do país onde a SunEnergy tem maior penetração de mercado e volume de instalações.</p>
+                    <br>
+                </div>
+                <br>
+                <div class="chart-container">
+                    <h3>Mês com Maior Volume de Vendas</h3>
+                    <canvas id="mesesChart"></canvas> <!-- ALTERADO DE IMG PARA CANVAS -->
+                    <br>
+                    <p class="chart-description">Identificação dos períodos de maior procura por sistemas fotovoltaicos, auxiliando no planejamento estratégico.</p>
+                    <br>
+                </div>
+
+                <div class="chart-container" id="paineisChartContainer"> <!-- Adicionamos um ID ao contêiner -->
+                    <h3>Tipos de Painéis Mais Vendidos</h3>
+                    <canvas id="paineisChart"></canvas>
+                    <br>
+                    <p class="chart-description">Quais modelos e potências de painéis solares são os mais populares entre nossos clientes, indicando preferências e necessidades.</p>
+                    <br>
+                </div>
+            </div>
+        </section>
+    </main>
+
+  <footer>
+  <div class="footer-container">
+    <div class="footer-logo">
+       <img src="static/images/logo.png" alt="Retorno sobre o investimento">
+      <div class="footer-bottom">
+       <div class="footer-social">
+        <a href="#"><img src="static/images/whatsapp.png" style="width:15px" alt="WhatsApp"></a>
+        <a href="#"><img src="static/images/facebook.png" style="width:15px" alt="Facebook"></a>
+        <a href="#"><img src="static/images/logotipo-do-linkedin.png" style="width:15px" alt="Linkedin"></a>
+        <a href="#"><img src="static/images/youtube.png" style="width:20px" alt="Youtube"></a>
+      </div>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h3>Páginas</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="simulacao.html">Simulação</a></li>
+        <li><a href="empresa.html">Empresa Insight</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h3>Soluções</h3>
+      <ul>
+        <li><a href="cadastro.html">Sign</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom" style="margin-top: 40px;">
+    <p style="color:white!important;">© 2025 Energia Solar Sustentável - Projeto Aplicado</p>
+  </div>
+</footer>
+    <script src="js/script.js"></script> <!-- Se for gerar gráficos com JS, descomente -->
+</body>
+</html>

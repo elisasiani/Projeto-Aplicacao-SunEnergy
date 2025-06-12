@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login de Usuário</title>
+    <link rel="stylesheet" href="static/css/style-cadastro.css">
+    <link rel="icon" href="static/images/logo.png" type="image/png">
+</head>
+<body>
+
+    <header>
+      <div class="container">
+              <img src="static/images/logo.png" alt="SunEnergy Logo" class="logo-img">
+          <nav>
+              <ul style="padding-left: 0">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="sobre.html">Sobre Nós</a></li>
+                  <li><a href="simulacao.html">Simulação</a></li>
+                  <li><a href="empresa.html">Empresa Insights</a></li>
+                  <li><a href="cadastro.html">Sign</a></li>
+              </ul>
+          </nav>
+      </div>
+    </header>
+
+    <main>
+         <div class="container-form">
+            <h1>Login</h1>
+            <form action="#" method="POST">
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="exemplo@dominio.com" required>
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+
+                <button type="submit">Entrar</button>
+            </form>
+
+            <div class="links">
+                <a href="esqueci_senha.html">Esqueci minha senha</a>
+            </div>
+        </div>
+    </main>
+
+
+  <footer>
+  <div class="footer-container">
+    <div class="footer-logo">
+       <img src="static/images/logo.png" alt="Retorno sobre o investimento">
+      <div class="footer-bottom">
+       <div class="footer-social">
+        <a href="#"><img src="static/images/whatsapp.png" style="width:15px" alt="WhatsApp"></a>
+        <a href="#"><img src="static/images/facebook.png" style="width:15px" alt="Facebook"></a>
+        <a href="#"><img src="static/images/logotipo-do-linkedin.png" style="width:15px" alt="Linkedin"></a>
+        <a href="#"><img src="static/images/youtube.png" style="width:20px" alt="Youtube"></a>
+      </div>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h3>Páginas</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="simulacao.html">Simulação</a></li>
+        <li><a href="empresa.html">Empresa Insight</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h3>Soluções</h3>
+      <ul>
+        <li><a href="cadastro.html">Sign</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom" style="margin-top: 40px;">
+    <p style="text-align: center !important;">© 2025 Energia Solar Sustentável - Projeto Aplicado</p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('senha').value;
+
+    if (email === 'cliente@solar.com' && senha === '123456') {
+        window.location.href = 'comparacao.html';
+    } else {
+        alert('Login inválido. Tente novamente.');
+    }
+});
+</script>
+
+</body>
+</html>
