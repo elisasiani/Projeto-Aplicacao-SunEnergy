@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação de Economia - SunEnergy</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="icon" href="static/images/logo.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo-link">
+                <img src="static/images/logo.png" alt="SunEnergy Logo" class="logo-img">
+            </a>
+            <nav>
+                <ul style="padding-left: 0">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="simulacao.html">Simulação</a></li>
+                    <li><a href="empresa.html">Empresa Insights</a></li>
+                    <li><a href="cadastro.html">Sign</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-title">
+            <div class="container">
+                <h2>Simule Sua Economia com Energia Solar</h2>
+                <p>Preencha os dados abaixo para receber uma estimativa personalizada.</p>
+            </div>
+        </section>
+
+        <section id="simulation-form-section">
+            <div class="container">
+                <form id="solarSimulationForm">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cep">CEP:</label>
+                        <input type="text" id="cep" name="cep" pattern="\d{5}-?\d{3}" placeholder="00000-000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="uf" >UF (Estado):</label>
+                        <select id="uf" style="background-color: white;" name="uf" required >
+                            <option value="">Selecione</option>
+                            <option value="AC">AC</option> <option value="AL">AL</option> <option value="AP">AP</option>
+                            <option value="AM">AM</option> <option value="BA">BA</option> <option value="CE">CE</option>
+                            <option value="DF">DF</option> <option value="ES">ES</option> <option value="GO">GO</option>
+                            <option value="MA">MA</option> <option value="MT">MT</option> <option value="MS">MS</option>
+                            <option value="MG">MG</option> <option value="PA">PA</option> <option value="PB">PB</option>
+                            <option value="PR">PR</option> <option value="PE">PE</option> <option value="PI">PI</option>
+                            <option value="RJ">RJ</option> <option value="RN">RN</option> <option value="RS">RS</option>
+                            <option value="RO">RO</option> <option value="RR">RR</option> <option value="SC">SC</option>
+                            <option value="SP">SP</option> <option value="SE">SE</option> <option value="TO">TO</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="gastoMensal">Gasto Mensal com Energia (R$):</label>
+                        <input type="number" id="gastoMensal" name="gastoMensal" min="50" step="0.01" placeholder="Ex: 350.50" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="concessionaria">Concessionária de Energia:</label>
+                        <input type="text" id="concessionaria" name="concessionaria" placeholder="Ex: CPFL, Enel, Cemig" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email para Contato:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group-kwh-history">
+                        <h2>Consumo de Energia (kWh - Últimos 12 Meses)</h2>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="jan_kwh">Janeiro:</label>
+                                    <input type="number" id="jan_kwh" name="jan_kwh" value="300" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fev_kwh">Fevereiro:</label>
+                                    <input type="number" id="fev_kwh" name="fev_kwh" value="280" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mar_kwh">Março:</label>
+                                    <input type="number" id="mar_kwh" name="mar_kwh" value="320" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="abr_kwh">Abril:</label>
+                                    <input type="number" id="abr_kwh" name="abr_kwh" value="290" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mai_kwh">Maio:</label>
+                                    <input type="number" id="mai_kwh" name="mai_kwh" value="270" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="jun_kwh">Junho:</label>
+                                    <input type="number" id="jun_kwh" name="jun_kwh" value="260" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="jul_kwh">Julho:</label>
+                                    <input type="number" id="jul_kwh" name="jul_kwh" value="250" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ago_kwh">Agosto:</label>
+                                    <input type="number" id="ago_kwh" name="ago_kwh" value="275" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="set_kwh">Setembro:</label>
+                                    <input type="number" id="set_kwh" name="set_kwh" value="295" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="out_kwh">Outubro:</label>
+                                    <input type="number" id="out_kwh" name="out_kwh" value="310" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nov_kwh">Novembro:</label>
+                                    <input type="number" id="nov_kwh" name="nov_kwh" value="305" min="0" required><span>kWh</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dez_kwh">Dezembro:</label>
+                                    <input type="number" id="dez_kwh" name="dez_kwh" value="330" min="0" required><span>kWh</span>
+                                </div>
+                            </div>
+                    </div>
+                    <button type="submit" class="cta-button">Realizar Simulação</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="simulation-results-section" style="display: none;">
+            <div class="container">
+                <h3>Resultado da Simulação</h3>
+                <div id="resultsDisplay" class="results-grid">
+                    <div class="result-item">
+                        <h4>Economia Anual Estimada:</h4>
+                        <p id="economiaAnual">R$ 0,00</p>
+                    </div>
+                    <div class="result-item">
+                        <h4>Área Necessária Estimada:</h4>
+                        <p id="areaNecessaria">0 m²</p>
+                    </div>
+                    <div class="result-item">
+                        <h4>Potência do Kit Estimada:</h4>
+                        <p id="potenciaKit">0 kWp</p>
+                    </div>
+                    <div class="result-item">
+                        <h4>Quantidade de Módulos Estimada:</h4>
+                        <p id="quantidadeModulos">0</p>
+                    </div>
+                    <div class="result-item">
+                        <h4>Produção Mensal Estimada:</h4>
+                        <p id="producaoMensal">0 kWh</p>
+                    </div>
+                    <div class="result-item result-highlight">
+                        <h4>VALOR ESTIMADO DO SISTEMA:</h4>
+                        <p id="valorSistema">R$ 0,00</p>
+                    </div>
+                    <div id="projecao">
+                        <canvas id="ganhoMensalChart"></canvas>
+                    </div>
+                </div>
+                </div>
+                <p class="disclaimer"><strong>Atenção:</strong> Estes são valores estimados. Uma análise técnica detalhada é necessária para um orçamento preciso. Entraremos em contato em breve!</p>
+            </div>
+        </section>
+    </main>
+
+      <footer>
+  <div class="footer-container">
+    <div class="footer-logo">
+       <img src="static/images/logo.png" alt="Retorno sobre o investimento">
+      <div class="footer-bottom">
+       <div class="footer-social">
+        <a href="#"><img src="static/images/whatsapp.png" style="width:15px" alt="WhatsApp"></a>
+        <a href="#"><img src="static/images/facebook.png" style="width:15px" alt="Facebook"></a>
+        <a href="#"><img src="static/images/logotipo-do-linkedin.png" style="width:15px" alt="Linkedin"></a>
+        <a href="#"><img src="static/images/youtube.png" style="width:20px" alt="Youtube"></a>
+      </div>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h3>Páginas</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="simulacao.html">Simulação</a></li>
+        <li><a href="empresa.html">Empresa Insight</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h3>Soluções</h3>
+      <ul>
+        <li><a href="cadastro.html">Sign</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom" style="margin-top: 40px;">
+    <p style="color:white!important;">© 2025 Energia Solar Sustentável - Projeto Aplicado</p>
+  </div>
+</footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
